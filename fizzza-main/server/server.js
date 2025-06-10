@@ -13,12 +13,16 @@ const PORT = process.env.PORT || 5000;
 
 const secretKey = process.env.SECRET_KEY || 'FkfxUTUP';
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://185.251.91.155:5000',
+  credentials: true
+}));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/users', express.static('users'));
 app.use(express.urlencoded({ extended: true }));
+
 
 const pool = new Pool({
   user: process.env.DB_USER || "postgres",
@@ -159,7 +163,7 @@ app.post('/register', async (req, res) => {
         const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
 
         res.cookie('authToken', token, {
-            secure: process.env.NODE_ENV === 'production',
+            secure: true,
             httpOnly: true,
             maxAge: 6000000,
             sameSite: 'strict'
@@ -254,7 +258,7 @@ app.post('/login', async (req, res) => {
       const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
       
       res.cookie('authToken', token, {
-          secure: process.env.NODE_ENV === 'production',
+          secure: true,
           httpOnly: true,
           maxAge: 6000000,
           sameSite: 'strict'
