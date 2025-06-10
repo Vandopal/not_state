@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 const secretKey = '60dfe4ace50871ce6e11021cc2cc2572140864c7921b05d6676553cfc9656f51';
-
+const secretKey1 = Buffer.from(secretKeyBase64, 'base64').toString('utf8');
 app.use(cors({
     origin: ['http://185.251.91.155:5000', 'http://localhost:5000'],
     credentials: true,
@@ -42,7 +42,7 @@ const pool = new Pool({
           return res.status(401).json({ message: 'Токен отсутствует' });
       }
       try {
-          const decoded = jwt.verify(token, secretKey);
+          const decoded = jwt.verify(token, secretKey1);
           req.user = decoded;
           next();
       } catch (error) {
