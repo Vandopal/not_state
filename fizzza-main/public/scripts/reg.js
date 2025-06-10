@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       
         try {
-            const response = await fetch('http://localhost:5000/register', {
+            const response = await fetch('http://185.251.91.155:5000/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

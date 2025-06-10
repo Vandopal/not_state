@@ -98,7 +98,7 @@ if (saveBtn) {
           saveBtn.disabled= true;
           saveBtn.textContent= 'Сохранение...';
 
-          const response= await fetch('http://localhost:5000/user/update', {
+          const response= await fetch('http://185.251.91.155:5000/user/update', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',
