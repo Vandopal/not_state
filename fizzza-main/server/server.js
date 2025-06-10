@@ -14,9 +14,11 @@ const PORT = process.env.PORT || 5000;
 const secretKey = process.env.SECRET_KEY || 'FkfxUTUP';
 
 app.use(cors({
-  origin: 'http://185.251.91.155:5000',
-  credentials: true
+    origin: 'http://185.251.91.155:5000',
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'] 
 }));
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
