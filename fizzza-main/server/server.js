@@ -95,7 +95,7 @@ app.post('/user/update', authMiddleware, async (req, res) => {
             role: updatedUser.role
         };
 
-        const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
+        const token = jwt.sign(payload, secretKey1, { expiresIn: '1h' });
 
         res.status(200).json({ 
             message: 'Данные успешно обновлены',
@@ -163,7 +163,7 @@ app.post('/register', async (req, res) => {
             phone: phone || ''
         };
 
-        const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
+        const token = jwt.sign(payload, secretKey1, { expiresIn: '1h' });
 
         res.cookie('authToken', token, {
             secure: true,
@@ -258,7 +258,7 @@ app.post('/login', async (req, res) => {
             phone: user.phone || ''
         };
 
-      const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
+      const token = jwt.sign(payload, secretKey1, { expiresIn: '1h' });
       
       res.cookie('authToken', token, {
           secure: true,
