@@ -32,21 +32,21 @@ const pool = new Pool({
   port: process.env.DB_PORT || "5432",
 });
 
-const authMiddleware = async (req, res, next) => {
-  const token = req.cookies.authToken;
-
-  if (!token) {
-    return res.status(401).json({ message: 'Токен отсутствует' });
-  }
-
-  try {
-    const decoded = jwt.verify(token, secretKey);
-    req.user = decoded;
-    next();
-  } catch (error) {
-    return res.status(401).json({ message: 'Неверный токен' });
-  }
-};
+  const authMiddleware = async (req, res, next) => {
+      const authHeader = req.headers.authorization;
+      const token = authHeader && authHeader.split(' ')[1];
+      if (!token) {
+          return res.status(401).json({ message: 'Токен отсутствует' });
+      }
+      try {
+          const decoded = jwt.verify(token, secretKey);
+          req.user = decoded;
+          next();
+      } catch (error) {
+          return res.status(401).json({ message: 'Неверный токен' });
+      }
+  };
+    
 
 app.get('/main.html', authMiddleware, (req, res) => {
   res.sendFile(path.join(__dirname, '../public', 'main.html'));
