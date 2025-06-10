@@ -11,12 +11,13 @@ const bcrypt = require('bcrypt');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const secretKey = process.env.SECRET_KEY || 'FkfxUTUP';
+const secretKey = 'FkfxUTUP';
 
 app.use(cors({
-    origin: 'http://185.251.91.155:5000',
+    origin: ['http://185.251.91.155:5000', 'http://localhost:5000'],
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization'] 
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
 
 app.use(express.json());
@@ -35,26 +36,19 @@ const pool = new Pool({
 });
 
   const authMiddleware = async (req, res, next) => {
-    const authHeader = req.headers.authorization;
-    const token = authHeader && authHeader.split(' ')[1];
-
-    if (!token) {
-        return res.status(401).json({ message: 'Токен отсутствует' });
-    }
-
-    try {
-        const decoded = jwt.decode(token);
-        
-        if (!decoded) {
-            return res.status(401).json({ message: 'Неверный фортокен' });
-        }
-
-        req.user = decoded;
-        next();
-    } catch (error) {
-        return res.status(401).json({ message: 'Ошибка разбора токена' });
-    }
-};
+      const authHeader = req.headers.authorization;
+      const token = authHeader && authHeader.split(' ')[1];
+      if (!token) {
+          return res.status(401).json({ message: 'Токен отсутствует' });
+      }
+      try {
+          const decoded = jwt.verify(token, secretKey);
+          req.user = decoded;
+          next();
+      } catch (error) {
+          return res.status(401).json({ message: 'Неверный токен' });
+      }
+  };
     
 
 app.get('/main.html', authMiddleware, (req, res) => {
