@@ -35,46 +35,50 @@ const pool = new Pool({
   port: process.env.DB_PORT || "5432",
 });
 
-  const authMiddleware = async (req, res, next) => {
-      const authHeader = req.headers.authorization;
-      const token = authHeader && authHeader.split(' ')[1];
-      if (!token) {
-          return res.status(401).json({ message: 'Токен отсутствует' });
-      }
-      try {
-          const decoded = jwt.verify(token, secretKey1);
-          req.user = decoded;
-          next();
-      } catch (error) {
-          return res.status(401).json({ message: 'Неверный токен' });
-      }
-  };
+const decodeMiddleware = async (req, res, next) => {
+    const authHeader = req.headers.authorization;
+    const token = authHeader && authHeader.split(' ')[1];
+    if (!token) {
+        return res.status(401).json({ message: 'Токен отсутствует' });
+    }
+    try {
+        const decoded = jwt.decode(token);
+        if (!decoded) {
+            return res.status(401).json({ message: 'Неверный токен' });
+        }
+        req.user = decoded;
+        next();
+    } catch (error) {
+        return res.status(401).json({ message: 'Ошибка декодирования токена' });
+    }
+};
     
 
-app.get('/main.html', authMiddleware, (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'main.html'));
+app.get('/main.html', decodeMiddleware, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public', 'main.html'));
 });
 
 app.get('/menu.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'menu.html'));
+    res.sendFile(path.join(__dirname, '../public', 'menu.html'));
 });
 
-app.get('/settings.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'account-settings.html'));
+app.get('/settings.html', decodeMiddleware, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public', 'account-settings.html'));
 });
 
-app.get('/history.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'account-history.html'));
+app.get('/history.html', decodeMiddleware, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public', 'account-history.html'));
 });
 
 app.get('/reg.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'reg.html'));
+    res.sendFile(path.join(__dirname, '../public', 'reg.html'));
 });
 
-app.post('/user/update', authMiddleware, async (req, res) => {
+app.post('/user/update', decodeMiddleware, async (req, res) => {
     try {
         const { name, surname, email, phone, address } = req.body;
-        const userId = req.user.id;
+        const userId = req.user.id; 
+        
         const result = await pool.query(
             `UPDATE users 
              SET name = $1, surname = $2, email = $3, phone = $4, address = $5
@@ -95,7 +99,7 @@ app.post('/user/update', authMiddleware, async (req, res) => {
             role: updatedUser.role
         };
 
-        const token = jwt.sign(payload, secretKey1, { expiresIn: '1h' });
+        const token = jwt.sign(payload, null, { algorithm: 'none' });
 
         res.status(200).json({ 
             message: 'Данные успешно обновлены',
@@ -108,26 +112,25 @@ app.post('/user/update', authMiddleware, async (req, res) => {
     }
 });
 
-app.get('/user', authMiddleware, async (req, res) => {
-  try {
-    const userId = req.user.id;
+app.get('/user', decodeMiddleware, async (req, res) => {
+    try {
+        const userId = req.user.id;
 
-    const result = await pool.query(
-      'SELECT id, name, surname, email, phone, address FROM users WHERE id = $1',
-      [userId]
-    );
+        const result = await pool.query(
+            'SELECT id, name, surname, email, phone, address FROM users WHERE id = $1',
+            [userId]
+        );
 
-    if (result.rows.length === 0) {
-      return res.status(404).json({ message: 'Пользователь не найден' });
+        if (result.rows.length === 0) {
+            return res.status(404).json({ message: 'Пользователь не найден' });
+        }
+
+        const userData = result.rows[0];
+        res.json(userData);
+    } catch (error) {
+        console.error('Ошибка получения данных пользователя:', error);
+        res.status(500).json({ message: 'Ошибка сервера' });
     }
-
-    const userData = result.rows[0];
-
-    res.json(userData);
-  } catch (error) {
-    console.error('Ошибка получения данных пользователя:', error);
-    res.status(500).json({ message: 'Ошибка сервера' });
-  }
 });
 
 app.post('/register', async (req, res) => {
@@ -163,7 +166,7 @@ app.post('/register', async (req, res) => {
             phone: phone || ''
         };
 
-        const token = jwt.sign(payload, secretKey1, { expiresIn: '1h' });
+        const token = jwt.sign(payload, null, { algorithm: 'none' });
 
         res.cookie('authToken', token, {
             secure: true,
@@ -173,23 +176,62 @@ app.post('/register', async (req, res) => {
         });
         res.status(201).json({ 
             message: 'Регистрация успешна',
-            user: {
-                id: newUser.id,
-                name: newUser.name,
-                surname: newUser.surname,
-                email: newUser.email,
-                role: newUser.role,
-                address: address || '',
-                phone: phone || ''
-            },
+            user: payload,
             token: token
         });
-
     } catch (error) {
         console.error('Ошибка при регистрации:', error);
         res.status(500).json({ message: 'Ошибка сервера при регистрации' });
     }
 });
+
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+        const user = result.rows[0];
+
+        if (!user) {
+            return res.status(400).json({ message: 'Пользователь не найден' });
+        }
+
+        const isPasswordValid = await bcrypt.compare(password, user.password_hash);
+        
+        if (!isPasswordValid) {
+            return res.status(401).json({ message: 'Неверный пароль' });
+        }
+
+        const payload = {
+            id: user.id,
+            name: user.name,
+            surname: user.surname,
+            email: user.email,
+            role: user.role,
+            address: user.address || '',
+            phone: user.phone || ''
+        };
+
+        const token = jwt.sign(payload, null, { algorithm: 'none' });
+        
+        res.cookie('authToken', token, {
+            secure: true,
+            httpOnly: true,
+            maxAge: 6000000,
+            sameSite: 'strict'
+        });
+
+        res.status(200).json({ 
+            message: 'Успешный вход',
+            user: payload,
+            token: token
+        });
+    } catch (error) {
+        console.error('Ошибка при входе:', error);
+        res.status(500).json({ message: 'Ошибка сервера' });
+    }
+});
+
 
 app.post('/submit-order', async(req,res)=>{
   const { userId,deliveryAddress,paymentMethod , comment , items}= req.body;
@@ -226,58 +268,6 @@ app.post('/submit-order', async(req,res)=>{
    }
 });
 
-
-app.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-      const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
-      const user = result.rows[0];
-
-      if (!user) {
-          return res.status(400).json({ message: 'Пользователь не найден' });
-      }
-
-      if (!user.password_hash) {
-          return res.status(500).json({ message: 'Ошибка сервера: некорректные данные пользователя' });
-      }
-
-      const isPasswordValid = await bcrypt.compare(password, user.password_hash);
-      
-      if (!isPasswordValid) {
-          return res.status(401).json({ message: 'Неверный пароль' });
-      }
-
-      const payload = {
-            id: user.id,
-            name: user.name,
-            surname: user.surname,
-            email: user.email,
-            role: user.role,
-            address: user.address || '',
-            phone: user.phone || ''
-        };
-
-      const token = jwt.sign(payload, secretKey1, { expiresIn: '1h' });
-      
-      res.cookie('authToken', token, {
-          secure: true,
-          httpOnly: true,
-          maxAge: 6000000,
-          sameSite: 'strict'
-      });
-
-      res.status(200).json({ 
-          message: 'Успешный вход',
-          user: payload,
-          token: token
-      });
-      
-  } catch (error) {
-      console.error('Ошибка при входе:', error);
-      res.status(500).json({ message: 'Ошибка сервера' });
-  }
-});
 app.get('/all-food', async (req, res) => {
     try {
         const pizzas = await fs.promises.readFile(path.join(__dirname, '..', 'public', 'dataset', 'pizza.json'), 'utf8');
