@@ -140,7 +140,7 @@ function createStars(orange, white) {
 
     for (let i = 0; i < orange; i++) {
         const star = document.createElement('img');
-        star.src = '../assets/starOrange.png';
+        star.src = '../assets/StarOrange.png';
         star.className = 'star';
         starsContainer.appendChild(star);
     }
