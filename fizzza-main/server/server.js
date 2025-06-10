@@ -11,7 +11,7 @@ const bcrypt = require('bcrypt');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const secretKey = 'FkfxUTUP';
+const secretKey = '60dfe4ace50871ce6e11021cc2cc2572140864c7921b05d6676553cfc9656f51';
 
 app.use(cors({
     origin: ['http://185.251.91.155:5000', 'http://localhost:5000'],
