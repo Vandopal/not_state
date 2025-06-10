@@ -161,7 +161,7 @@ app.post('/register', async (req, res) => {
         res.cookie('authToken', token, {
             secure: process.env.NODE_ENV === 'production',
             httpOnly: true,
-            maxAge: 60000,
+            maxAge: 6000000,
             sameSite: 'strict'
         });
         res.status(201).json({ 
@@ -256,7 +256,7 @@ app.post('/login', async (req, res) => {
       res.cookie('authToken', token, {
           secure: process.env.NODE_ENV === 'production',
           httpOnly: true,
-          maxAge: 60000,
+          maxAge: 6000000,
           sameSite: 'strict'
       });
 
