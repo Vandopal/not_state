@@ -35,19 +35,26 @@ const pool = new Pool({
 });
 
   const authMiddleware = async (req, res, next) => {
-      const authHeader = req.headers.authorization;
-      const token = authHeader && authHeader.split(' ')[1];
-      if (!token) {
-          return res.status(401).json({ message: 'Токен отсутствует' });
-      }
-      try {
-          const decoded = jwt.verify(token, secretKey);
-          req.user = decoded;
-          next();
-      } catch (error) {
-          return res.status(401).json({ message: 'Неверный токен' });
-      }
-  };
+    const authHeader = req.headers.authorization;
+    const token = authHeader && authHeader.split(' ')[1];
+
+    if (!token) {
+        return res.status(401).json({ message: 'Токен отсутствует' });
+    }
+
+    try {
+        const decoded = jwt.decode(token);
+        
+        if (!decoded) {
+            return res.status(401).json({ message: 'Неверный фортокен' });
+        }
+
+        req.user = decoded;
+        next();
+    } catch (error) {
+        return res.status(401).json({ message: 'Ошибка разбора токена' });
+    }
+};
     
 
 app.get('/main.html', authMiddleware, (req, res) => {
