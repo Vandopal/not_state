@@ -102,9 +102,9 @@ if (saveBtn) {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',
-                  "credentials": 'include',
                   'Authorization': `Bearer ${authToken}`
               },
+              credentials: 'include',
               body: JSON.stringify({
                 name: firstName,
                 surname: lastName,
