@@ -1,0 +1,214 @@
+@font-face {
+    font-family: 'Inter-SemiBold';
+    src: url('../assets/fonts/Inter_18pt-SemiBold.ttf');
+}
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('../assets/fonts/Inter_18pt-Regular.ttf');
+}
+@font-face {
+    font-family: 'Inter-Thin';
+    src: url('assets/fonts/Inter_28pt-Thin.ttf');
+}
+@font-face {
+    font-family: 'Inter-Light';
+    src: url('assets/fonts/Inter_28pt-Light.ttf');
+}
+@font-face {
+    font-family: 'Rubik-Bold';
+    src: url('../assets/fonts/Rubik-Bold.ttf');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+  }
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #232323;
+}
+
+.main-auth-block {
+   width: 720px;
+   height: 900px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items:  center;
+   background: #FFFFFF;
+}
+.auth {
+    font-family: 'Inter-SemiBold';
+    font-weight: 600;
+    font-size: 32px;
+    padding-bottom: 15px;
+}
+
+.main-auth-block-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
+
+.picture-auth-block {
+    width: 720px;
+    height: 900px;
+    background: linear-gradient(#D9713C, #EE7D43);
+}
+
+.auth-confirm {
+    display: flex;
+}
+
+.auth-confirm-btn {
+    width: 25px;
+    height: 25px;
+}
+
+textarea {
+    height: 65px;
+    width: 440px;
+    background: #F3F4F6;
+    border: none;
+    margin-bottom: 20px;
+    resize: none;
+    border-radius: 8px;
+    padding-top: 22px;
+    padding-left: 22px;
+    font-size: 16px;
+    font-family: 'Inter-Regular';
+}
+textarea:focus {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.auth-txt {
+    color: #4B5563;
+    font-family: 'Inter-Regular';
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 40px;
+}
+.auth-password {
+    display: flex;
+    justify-content: space-between;
+}
+.auth-mail {
+    font-size: 16px;
+    font-weight: 600px;
+    font-family: 'Inter-SemiBold';
+    padding-bottom: 10px;
+}
+
+.auth-password-2 {
+    font-size: 16px;
+    font-weight: 600px;
+    font-family: 'Inter-SemiBold';
+    padding-bottom: 10px;
+}
+.auth-forget-password {
+   border: none;
+   background: none;
+   color: #EE7D43;
+   font-family: 'Inter-SemiBold';
+}
+.auth-confirm {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.auth-confirm-btn {
+  border: 15px solid #F3F4F6;
+  border-radius: 3px;
+  width: 15px;
+  height: 15px;
+  background: #F3F4F6;
+}
+.auth-confirm-btn:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    background: #EE7D43;
+}
+ 
+.auth-confirm-txt {
+   font-family: 'Inter-SemiBold';
+}
+
+.auth-signin-btn {
+    border: none; 
+    border-radius: 6px;
+    background-color: #EE7D43;
+    color: #FFFFFF;
+    width: 440px;
+    height: 69px;
+    margin-top: 22px;
+    font-size: 16px;
+    font-family: 'Inter-Regular';
+    margin-bottom: 50px;
+}
+.auth-signin-btn:hover {
+    cursor: pointer;
+    color: #EE7D43;
+    border: 1px solid #EE7D43;
+    background-color: #FFFFFF;
+    transition: 0.3s;
+}
+.auth-noacc {
+    font-family: 'Inter-Regular';
+}
+.auth-reg-btn {
+    border: none;
+    color: #EE7D43;
+    background: none;
+    font-family: 'Inter-Regular';
+    font-size: 16px;
+}
+.picture-auth-block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+     overflow: hidden;
+     position: relative;
+}
+.picture-auth-1 {
+     width: 503px;
+     height: 494px;
+}
+.picture-auth-block-2 {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 550px;
+    left: 100px;
+}
+.picture-auth-2 {
+   opacity: 0.5; 
+   width: 700px;
+   height: 700px;
+   position: absolute;
+   right: -270px;
+   top: 430px;
+}
+.picture-auth-txt-1 {
+   font-family: 'Inter-Thin', sans-serif;
+   color: #FFFFFF;
+   letter-spacing: 3px;
+   font-size: 14px;
+   line-height: 28px;
+   font-weight: 600;
+}
+.picture-auth-txt-2 {
+   font-size: 26.49px;
+   color: #FFFFFF;
+   font-family: 'Rubik-Bold', sans-serif;
+   font-weight: 800px;
+   width: 251px;
+   position: absolute; 
+   bottom: -130px;
+   right: -70px;
+}

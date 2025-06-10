@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Цезарь",
+        "price": "350 рублей",
+        "image": "dataset/salads/51222563.png",
+        "rating": 4.7
+    },
+    {
+        "name": "Греческий",
+        "price": "300 рублей",
+        "image": "dataset/salads/58978971.png",
+        "rating": 4.5
+    },
+    {
+        "name": "Овощной",
+        "price": "250 рублей",
+        "image": "dataset/salads/76593446.png",
+        "rating": 4.2
+    },
+    {
+        "name": "Салат с тунцом",
+        "price": "400 рублей",
+        "image": "dataset/salads/92402465.png",
+        "rating": 4.6
+    }
+]

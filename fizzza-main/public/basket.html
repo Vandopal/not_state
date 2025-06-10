@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/basket.css">
+    <script src="./scripts/basket.js"></script>
+    <title>FizzaPizza/basket</title>
+</head>
+<body>
+    <header>
+        <div class="schedule">Мы работаем 24 на 7</div>
+        <nav class="navigator">
+            <img class="logo" src="assets/Group 50.png" alt="">
+           <div class="btns-cont-1">
+            <button class="main-btn" onclick="window.location.href='/main.html'">Главная</button>
+                <button class="menu-btn" onclick="window.location.href='/menupol.html'">Меню</button> 
+                <button class="contact-btn" onclick="window.location.href='/menu.html'">Контакт</button>
+           </div>
+           <div class="btns-cont-2">
+            <button class="search-btn"><img src="assets/akar-icons_search.png" alt=""></button>
+            <button class="wishlist-btn" onclick="window.location.href='/basket.html'"><img src="assets/Group 2.png" alt=""></button>
+            <button class="sign-in-btn" onclick="window.location.href='/settings.html'"><img src="assets/carbon_login.png" alt="">Войти</button>
+           </div>
+        </nav>
+    </header>
+    <main>
+        <section class="your-basket-txt">
+            <p class="main-basket-txt">Главная > <span>Корзина</span></p>
+            <h1>Ваша корзина</h1>
+        </section>
+        <section class="basket-tables">
+                <div class="basket-sos-table">
+                   <div class="finalcost">
+                        <p class="finalcost-txt">Общая стоимость Вашей покупки без учёта доставки составит:</p>
+                        <div class="costs">
+                            <p id="total-without-delivery">0 руб.</p>
+                            <p class="cost-line" id="original-total">0 руб.</p>
+                        </div>
+                   </div>
+                </div>
+                    
+            <div class="basket-cost-table">
+                <div class="final-txt">
+                    <h2>Итого</h2>
+                    <div class="product-cost">
+                        <p>Стоимость товаров</p>
+                        <div class="line1"> </div>
+                        <p id="products-total">0 руб</p>
+                    </div>
+                    <div class="product-cost">
+                        <p>Скидка</p>
+                        <div class="line2"> </div>
+                        <p id="discount-value">0 руб</p>
+                    </div>
+                    <div class="product-cost">
+                        <p>Доставка</p>
+                        <div class="line3"> </div>
+                        <p id="delivery-cost">400 руб</p>
+                    </div>
+                </div>
+                <hr class="final-line">
+                <div class="k-oplate-section">
+                    <p class="k-oplate-txt">К оплате</p>
+                    <p class="k-oplate-cost" id="total-to-pay">400 руб</p>
+                </div>
+                <hr>
+                <div class="promo-section">
+                    <p class="promo-txt">Промокод:</p>
+                    <textarea class="promo-textarea" placeholder="Введите промокод" required></textarea>
+                    <button class="promo-textarea-apply-btn">Применить</button>
+                </div>
+                <div class="place-an-order-btn-block">
+                   <button class="place-an-order-btn">Оформить заказ</button>
+               </div>
+            </div>
+        </section>
+        <section class="delivery-section-blocks">
+            <div class="delivery-section-block">
+                <div class="delivery-h-txt">
+                    <h1>Доставка</h1>
+                    <p>Укажите контактные данные и выберите способ доставки</p>
+                </div>
+                <div class="delivery-textareas">
+                    <div class="two-textareas">
+                        <div class="textarea-1">
+                            <p>Ваше имя*</p>
+                            <textarea placeholder="Укажите имя" class="name-field"></textarea>
+                        </div>
+                        <div class="textarea-2">
+                            <p>Ваш телефон*</p>
+                            <textarea placeholder="+7 (___) ___-__-__" class="phone-field"></textarea>
+                        </div>
+                    </div>
+                    <div class="address-textarea-block">
+                        <p>Адрес доставки</p>
+                        <textarea class="address-textarea" placeholder="Не нужно заполнять при самовывозе"></textarea>
+                    </div>
+                    <div class="commentary-section">
+                        <p>Комментарий к заказу</p>
+                        <textarea class="commentary-textarea" placeholder="Здесь Вы можете написать пожелания, относительно анонимной доставки, текста, открытки и другое."></textarea>
+                    </div>
+                    <div class="pay-method-section">
+                        <div class="pay-method-btns">
+                            <div>
+                                <button></button>
+                                <h4>Наличными при получении</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="start">
+                <div class="final-cost-w-delivery-section">
+                    <p>Итоговая сумма заказа вместе с доставкой:</p>
+                    <h3 id="final-total-with-delivery">400 руб.</h3>
+                </div>
+                <hr class="end">
+                 <div class="place-an-order-btn-main-section">
+                    <button class="place-an-order-btn-main">Оформить заказ</button>
+                 </div>
+                 <p class="p-c">Нажимая на кнопку "Оформить заказ" Я принимаю и соглашаюсь с <a>Договором оферты</a> и разрешаю обработку моих персональных данных в соответствии с <a>Политикой конфиденциальности</a></p>
+            </div>
+            <div class="empty-delivery-block"></div>
+        </section>
+    </main>
+</body>
+</html>

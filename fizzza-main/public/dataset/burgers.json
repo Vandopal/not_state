@@ -1,0 +1,68 @@
+[
+    {
+        "name": "Двойной",
+        "price": "300 рублей",
+        "image": "dataset/burgers/11337353.png",
+        "rating": 3.5
+    },
+    {
+        "name": "Гамбургер",
+        "price": "350 рублей",
+        "image": "dataset/burgers/13459291.png",
+        "rating": 4.5
+    },
+    {
+        "name": "Сырный",
+        "price": "400 рублей",
+        "image": "dataset/burgers/17039540.png",
+        "rating": 4.3
+    },
+    {
+        "name": "BBQ",
+        "price": "450 рублей",
+        "image": "dataset/burgers/17155505.png",
+        "rating": 4.8
+    },
+    {
+        "name": "Двойной с сыром",
+        "price": "250 рублей",
+        "image": "dataset/burgers/36667504.png",
+        "rating": 4.2
+    },
+    {
+        "name": "Брусничный",
+        "price": "300 рублей",
+        "image": "dataset/burgers/41278239.png",
+        "rating": 4.6
+    },
+    {
+        "name": "Гавайский",
+        "price": "350 рублей",
+        "image": "dataset/burgers/59350662.png",
+        "rating": 4.5
+    },
+    {
+        "name": "Супер мясной",
+        "price": "400 рублей",
+        "image": "dataset/burgers/70472225.png",
+        "rating": 4.3
+    },
+    {
+        "name": "Гамбургер delux",
+        "price": "450 рублей",
+        "image": "dataset/burgers/94808061.png",
+        "rating": 4.8
+    },
+    {
+        "name": "Бургер с двойным сыром",
+        "price": "250 рублей",
+        "image": "dataset/burgers/95491751.png",
+        "rating": 4.2
+    },
+    {
+        "name": "Американский",
+        "price": "300 рублей",
+        "image": "dataset/burgers/photo.png",
+        "rating": 4.6
+    }
+]

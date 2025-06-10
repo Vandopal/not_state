@@ -1,0 +1,527 @@
+@font-face {
+    font-family: 'Rubik-Medium';
+    src: url('../assets/fonts/Rubik-Medium.ttf');
+};
+@font-face {
+    font-family: 'Rubik-Regular';
+    src: url('../assets/fonts/Rubik-Regular.ttf');
+};
+@font-face {
+    font-family: 'Rubik-Bold';
+    src: url('../assets/fonts/Rubik-Bold.ttf');
+}
+@font-face {
+    font-family: 'Rubik-Light';
+    src: url( '../assets/fonts/Rubik-Light.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Black';
+  src: url('../assets/fonts/Montserrat-Black.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('../assets/fonts/Montserrat-Bold.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-ExtraBold';
+  src: url('../assets/fonts/Montserrat-ExtraBold.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-ExtraLight';
+  src: url('../assets/fonts/Montserrat-ExtraLight.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('../assets/fonts/Montserrat-Light.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url('../assets/fonts/Montserrat-Medium.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('../assets/fonts/Montserrat-Regular.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-SemiBold';
+  src: url('../assets/fonts/Montserrat-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Thin';
+  src: url('../assets/fonts/Montserrat-Thin.ttf');
+}
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('../assets/fonts/Inter_18pt-Regular.ttf');
+}
+@font-face {
+    font-family: 'Inter-Bold';
+    src: url('../assets/fonts/Inter_18pt-Bold.ttf');
+}
+@font-face {
+  font-family: 'Inter-Light';
+  src: url('../assets/fonts/Inter_18pt-Light.ttf');
+}
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url('assets/fonts/Poppins-SemiBold.ttf');
+} 
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+}
+.header {
+    display: flex;
+    flex-direction: column;  
+    
+  }
+  
+  .schedule {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    background: #EE7D43;
+    color: white;
+    font-family: 'Inter-Light', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+    height: 50px;
+    padding-top: 10px;
+    z-index: 2000;
+  }
+  
+  .navigator {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center; 
+    background-color: #fff;
+    top: 40px;
+    height: 80px;
+    border-bottom: 2px solid #EE7D43;
+    z-index: 2000;
+    flex-wrap: nowrap;
+    padding: 0 20px;
+    box-sizing: border-box;
+   
+  }
+
+ 
+
+  .btns-cont-1 {
+    display: flex; 
+    align-items: center; 
+    font-family: 'Rubik-Medium ', sans-serif;
+    justify-content: center;
+    position: absolute;
+    gap: 50px;
+  }
+ 
+   .btns-cont-2 {
+    display: flex; 
+    align-items: center; 
+     justify-content: flex-end;
+    font-family: 'Rubik-Medium ', sans-serif;
+   
+    gap: 50px;
+     
+  }
+  
+  .main-btn, .menu-btn, .contact-btn, .search-btn, .wishlist-btn  {
+   
+    font-size: 16px; 
+    background-color: #fff; 
+    border: none;
+    color: black;
+    font-family: 'Rubik-Medium', sans-serif;
+    transition: 0.3s;
+     
+    text-align: center; /* Центрирует текст внутри кнопок */
+  }
+
+  .menu-btn {
+   
+    font-size: 16px; 
+    background-color: #fff; 
+    border: none;
+    font-family: 'Rubik-Medium', sans-serif;
+    color: #EE7D43;
+  }
+ 
+   .main-btn:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    color: #EE7D43;
+  }
+
+  .contact-btn:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    color: #EE7D43;
+  }
+
+  .sign-in-btn {
+    background-color: #EE7D43;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 200px;
+    font-family: 'Rubik-Medium' , sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+ 
+  @media (max-width: 1300px) {
+    .btns-cont-1 {
+       display: flex;
+       gap: 20px;
+    }
+    .btns-cont-2 {
+      display: flex;
+      gap: 20px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .btns-cont-1 {
+      display: flex;
+      gap: 20px;
+      
+         
+      
+    }
+    .btns-cont-2 {
+      display: flex;
+      gap: 20px;
+   
+    }
+    @media (max-width: 950px) {
+      .btns-cont-1 {
+        display: flex;
+        position: relative;
+      }
+    }
+    @media (max-width: 800px) {
+     
+       
+      .btns-cont-2 {
+        display: flex;
+         
+
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    .container {
+      display: flex;
+      gap: 20px;
+      
+    }
+    .btns-cont-1 {
+      display: flex;
+      gap: 10px;
+       
+    }
+    .btns-cont-2 {
+      display: flex;
+      gap: 10px;
+     
+    }
+  }
+  @media (max-width: 600px) {
+    .btns-cont-1 {
+      flex-direction: column;
+    }
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 200px;
+    gap: 40px;
+  }
+  .cont-img-1 {
+    transition: transform 0.5s ease;
+    display: flex; /* Используем Flexbox для центрирования */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    overflow: hidden;
+    padding: 0 20px; /* Устанавливаем отступы слева и справа */
+    box-sizing: border-box;
+    
+   }
+
+.back-img {
+    max-width: calc(100% - 70px); /* Ограничиваем ширину изображения с учетом отступов */
+    height: 385px; /* Высота автоматически подстраивается */
+    min-height: 385px; /* Устанавливаем минимальную высоту изображения равной высоте контейнера */
+    object-fit: cover; /* Сохраняем пропорции изображения */
+    right: -50%; /* Начинаем с центра */
+     border-radius: 10px;
+     
+}
+   
+   .cont-el-1 {
+     display: flex;
+     flex-direction: column;
+    flex-wrap: nowrap;
+    left: 50%;
+     justify-content: center;
+     align-items: center;
+     font-family: 'Montserrat-Medium', sans-serif;
+     top: 280px;
+     line-height: 20px;
+      position: absolute;
+     transform: translate();
+       
+   }
+   
+ 
+   .cont-el-1 h1 {
+     display: flex;
+     font-size: 40px;
+     font-weight: 600;
+     font-family: 'Montserrat-SemiBold', sans-serif;
+   }
+
+   .cont-el-1 p {
+    text-align: center;
+    color: #666666;
+    font-size: small;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    white-space: nowrap;
+ 
+   }
+@media (max-width: 1200px) {
+     .cont-el-1 {
+      transform: translate(-10%);
+     }
+   
+   }
+   @media (max-width: 1100px) {
+    .cont-el-1 {
+     transform: translate(-20%);
+    }
+  
+  }
+  @media (max-width: 1000px) {
+    .cont-el-1 {
+     transform: translate(-30%);
+    }
+  
+  }
+  @media (max-width: 900px) {
+    .cont-el-1 {
+     transform: translate(-40%);
+    }
+  
+  }
+  @media (max-width: 800px) {
+    .cont-el-1 {
+     transform: translate(-50%);
+    }
+    .cont-el-1  p {
+      color: black;
+    }
+  }
+  @media (max-width: 650px) {
+    .cont-el-1 p {
+      white-space: wrap;
+      text-align: center;
+    }
+     .btn {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+        
+     }
+  }
+  @media (max-width: 510px) {
+    .cont-el-1 p {
+      padding-bottom: 10px;
+    }
+    .btn {
+      display: flex;
+      column-gap: 10px;
+    }
+  }
+   .btn {
+      
+      border: 2px solid #EE7D43;
+      border-radius: 3px;
+      width: 230px;
+      height: 50px;
+      background-color: transparent;
+      font-family: 'Rubik-Medium', sans-serif;
+      font-size: 14px;
+      white-space: nowrap;
+   }
+  .btn:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid #fff;
+    color: #EE7D43;
+  }
+  h1 {
+    font-family: 'Inter-Bold';
+    font-weight: 700;
+    font-size: 40px;
+  }
+  .food-class-blocks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+     flex-wrap: wrap;
+  }
+  .food-class-block, .food-class-block-orange {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 112px;
+    height: 236px;
+    border-radius: 24px;
+    letter-spacing: 1.5px;
+    border: none;
+    gap: 24px;
+  }
+  .food-class-block {
+    background-color: #fff;
+    border: 1px solid #fff;
+  }
+  .food-class-block:hover {
+    cursor: pointer;
+    transition: 0.8s;
+    border: 1px solid #EE7D43;
+  }
+  .food-class-block-orange {
+    background-color: #EE7D43;
+    color: #fff;
+  }
+   p {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins-SemiBold' , sans-serif;
+  }
+  .line {
+    position: relative;
+     
+   
+}
+
+.line::after {
+    content: '';
+    display: block;
+    height: 2px; /* Высота линии */
+    background-color: #EE7D43; /* Цвет линии */
+    width: 32px; /* Ширина линии */
+ 
+}
+.line-w {
+  position: relative;
+}
+
+.line-w::after {
+  content: '';
+  display: block;
+  height: 2px; 
+  background-color: #fff;
+  width: 51px;
+}
+
+.pizzas-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  max-width: 1200px;
+
+}
+ 
+.pizza-card {
+  display: flex;
+  flex-direction: column;
+  width: 251px;
+  height: 348px;
+  justify-content: end;
+  align-items: center;
+  border: none;
+  background-color: #fff;
+}
+.pizza-card-block {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  background-color: #fff;
+  border-radius: 24px;
+  border: 1px solid #fff;
+  width: 251px;
+  height: 262px;
+  padding-left: 24px;
+  gap: 5px;
+}
+.pizza-card-block:hover {
+  transition: 0.8s;
+  cursor: pointer;
+  border: 1px solid #EE7D43;
+}
+.pizza-card-block p {
+  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Poppins-SemiBold', sans-serif;
+  letter-spacing: 1px;
+}
+.cost {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  padding-top: 24px;
+}
+.cost p {
+  color: #EE7D43;
+}
+.stars {
+  margin-top: 5px;
+}
+.pizza {
+  transform: translate(0 , -190px);
+  z-index: 1;
+  width: 170px;
+  height: 150px;
+}
+
+.food-class-button {
+  color: black;
+  background-color: white;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.food-class-button.active {
+  font-weight: bold;
+  border: 2px solid #EE7D43;
+  background-color: #EE7D43;
+}
+
+.food-image {
+  width: 233.33px;
+  height: 233.33px;
+}

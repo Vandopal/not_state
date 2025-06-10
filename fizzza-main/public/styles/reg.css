@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'Inter-SemiBold';
+    src: url('../assets/fonts/Inter_18pt-SemiBold.ttf');
+}
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('../assets/fonts/Inter_18pt-Regular.ttf');
+}
+@font-face {
+    font-family: 'Inter-Thin';
+    src: url('assets/fonts/Inter_28pt-Thin.ttf');
+}
+@font-face {
+    font-family: 'Inter-Light';
+    src: url('assets/fonts/Inter_28pt-Light.ttf');
+}
+@font-face {
+    font-family: 'Rubik-Bold';
+    src: url('../assets/fonts/Rubik-Bold.ttf');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    background: #232323;
+}
+ 
+.picture-reg-block {
+    width: 720px;
+    height: 900px;
+    background: linear-gradient(#D9713C, #EE7D43);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+     overflow: hidden;
+     position: relative;
+}
+.picture-reg-block-2 {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 550px;
+    left: 100px;
+}
+
+.picture-reg-1 {
+    width: 503px;
+    height: 494px;
+}
+
+.picture-reg-2 {
+    opacity: 0.5; 
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    right: -270px;
+    top: 430px;
+}
+.picture-reg-txt-1 {
+    font-family: 'Inter-Thin', sans-serif;
+    color: #FFFFFF;
+    letter-spacing: 3px;
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 600;
+ }
+ .picture-reg-txt-2 {
+    font-size: 26.49px;
+    color: #FFFFFF;
+    font-family: 'Rubik-Bold', sans-serif;
+    font-weight: 800px;
+    width: 251px;
+    position: absolute; 
+    bottom: -130px;
+    right: -70px;
+ }
+
+ .main-reg-block {
+    width: 720px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:  center;
+    background: #FFFFFF;
+}
+.main-reg-block-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
+.reg {
+    font-family: 'Inter-SemiBold';
+    font-weight: 600;
+    font-size: 32px;
+    padding-bottom: 15px;
+}
+.reg-txt {
+    color: #4B5563;
+    font-family: 'Inter-Regular';
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 40px;
+}
+textarea:focus {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+.reg-mail {
+    font-size: 16px;
+    font-weight: 600px;
+    font-family: 'Inter-SemiBold';
+    padding-bottom: 10px; 
+}
+.reg-password-2 {
+    font-size: 16px;
+    font-weight: 600px;
+    font-family: 'Inter-SemiBold';
+    padding-bottom: 10px;
+}
+.reg-password-3 {
+    font-size: 16px;
+    font-weight: 600px;
+    font-family: 'Inter-SemiBold';
+    padding-bottom: 10px;
+}
+.reg-confirm {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.reg-confirm-btn {
+    border: 15px solid #F3F4F6;
+    border-radius: 3px;
+    width: 15px;
+    height: 15px;
+    background: #F3F4F6;
+  }
+  .reg-confirm-btn:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    background: #EE7D43;
+}
+.reg-confirm-txt {
+    font-family: 'Inter-SemiBold';
+ }
+ .reg-signin-btn {
+    border: none; 
+    border-radius: 6px;
+    background-color: #EE7D43;
+    color: #FFFFFF;
+    width: 500px;
+    height: 69px;
+    margin-top: 22px;
+    font-size: 16px;
+    font-family: 'Inter-Regular';
+    margin-bottom: 50px;
+}
+.reg-signin-btn:hover {
+    cursor: pointer;
+    color: #EE7D43;
+    border: 1px solid #EE7D43;
+    background-color: #FFFFFF;
+    transition: 0.3s;
+}
+
+.flex-direction {
+    display: flex;
+    max-width: 400px;
+    gap: 20px
+}
+
+.reg-fio-textarea {
+    height: 65px;
+    width: 240px;
+    background: #F3F4F6;
+    border: none;
+    margin-bottom: 20px;
+    resize: none;
+    border-radius: 8px;
+    padding-top: 22px;
+    padding-left: 22px;
+    font-size: 16px;
+    font-family: 'Inter-Regular';
+}
+
+.reg-textarea {
+    height: 65px;
+    width: 500px;
+    background: #F3F4F6;
+    border: none;
+    margin-bottom: 20px;
+    resize: none;
+    border-radius: 8px;
+    padding-top: 22px;
+    padding-left: 22px;
+    font-size: 16px;
+    font-family: 'Inter-Regular';
+}
+

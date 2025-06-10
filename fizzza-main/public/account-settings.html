@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/account-settings.css">
+    <script src="./scripts/account-setting.js"></script>
+    <title>account-settings</title>
+</head>
+<body>
+    <main>
+        <header>
+            <div class="schedule">Мы работаем 24 на 7</div>
+            <nav class="navigator">
+                
+                <img class="logo" src="assets/Group 50.png" alt="">
+           
+               <div class="btns-cont-1">
+                <button class="main-btn" onclick="window.location.href='/main.html'">Главная</button>
+                    <button class="menu-btn" onclick="window.location.href='/menupol.html'">Меню</button> 
+                    <button class="contact-btn" onclick="window.location.href='/main.html'">Каталог</button>
+               </div>
+               <div class="btns-cont-2">
+                <button class="search-btn"><img src="assets/akar-icons_search.png" alt=""></button>
+                <button class="wishlist-btn" onclick="window.location.href='/basket.html'"><img src="assets/Group 2.png" alt=""></button>
+                <button class="sign-in-btn" onclick="window.location.href='/account-settings.html'"><img src="assets/carbon_login.png" alt="">Войти</button>
+               </div>
+            </nav>
+        </header>
+        <section class="content-container">
+            <aside>
+                <div class="twobuttons">
+                    <button class="history" onclick="window.location.href='/history.html'"><img src="../public/assets/activity.png" alt="">Мои заказы</button>
+                    <button class="settings" onclick="window.location.href='/settings.html'"><img src="../public/assets/setting-2.svg" alt="">Настройки</button>
+                </div>
+                <button class="logout"><img src="../public/assets/logout.png" alt="">Выйти из аккаунта</button>
+            </aside>
+            <div class="main-content">
+                <div class="content-head">
+                    <h2 class="content-head-h2">Настройки аккаунта</h2>
+                    <hr>
+                </div>
+                <div class="add-photo">
+                    <input type="file" class="file">
+                    <button><img src="" alt=""></button>
+                </div>
+                <hr>
+                <div class="textareas-cont">
+                    <div class="textareas-line1">
+                        <div class="textarea-p">
+                            <p>Имя</p>
+                            <textarea name="" id="" class='first-name' placeholder="Напишите ваше имя" required></textarea>
+                        </div> 
+                        <div class="textarea-p">
+                            <p>Фамилия</p>
+                            <textarea name="" id="" class='last-name' placeholder="Напишите вашу Фамилия" required></textarea>
+                        </div>
+                    </div>
+                    <div class="textareas-line2">
+                        <div class="textarea-p">
+                            <p>Почта</p>
+                            <textarea name="" id="" class='email' placeholder="Напишите вашу почту" required></textarea>
+                        </div>
+                        <div class="textarea-p">
+                            <p>Номер Телефона</p>
+                            <textarea name="" id="" class='phone' placeholder="Напишите ваш номер телефона" required></textarea>
+                        </div>
+                    </div>
+                    <div class="textareas-line2">
+                        <div class="textarea-p phonenumer-textarea">
+                            <p>Адрес доставки</p>
+                            <textarea name="" id="" class='address' placeholder="Напишите ваш адрес доставки" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                 <div class="content-buttons">
+                    <button class="save-btn">Сохранить</button>
+                    <button class="back-btn">Назад</button>
+                 </div>
+            </div>
+        </section>
+    </main>
+</body>
+  

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/account-history.css">
+    <script src="./scripts/account-history.js"></script>
+    <title>account-settings</title>
+</head>
+<body>
+    <main>
+        <header>
+            <div class="schedule">Мы работаем 24 на 7</div>
+            <nav class="navigator">
+                
+                <img class="logo" src="assets/Group 50.png" alt="">
+           
+               <div class="btns-cont-1">
+                <button class="main-btn" onclick="window.location.href='/main.html'">Главная</button>
+                    <button class="menu-btn" onclick="window.location.href='/menupol.html'">Меню</button> 
+                    <button class="contact-btn" onclick="window.location.href='/main.html'">Каталог</button>
+               </div>
+               <div class="btns-cont-2">
+                <button class="search-btn"><img src="assets/akar-icons_search.png" alt=""></button>
+                <button class="wishlist-btn"><img src="assets/Group 2.png" alt=""></button>
+                <button class="sign-in-btn" onclick="window.location.href='/settings.html'"><img src="assets/carbon_login.png" alt="">Войти</button>
+               </div>
+            </nav>
+        </header>
+        <section class="content-container">
+            <aside>
+                <div class="twobuttons">
+                    <button class="history" onclick="window.location.href='/history.html'"><img src="../public/assets/activity.svg" alt="">Мои заказы</button>
+                    <button class="settings" onclick="window.location.href='/settings.html'"><img src="../public/assets/setting-2.svg" alt="">Настройки</button>
+                </div>
+                <button class="logout"><img src="../public/assets/logout.svg" alt="">Выйти из аккаунта</button>
+            </aside>
+                <div class="table-wrapper">
+                <table>
+                    <thead>
+                    
+                    <caption>МОИ ЗАКАЗЫ</caption>
+                        <tr class="table-panel">
+                            <th class="table-panel-th id">ORDER ID</th>
+                            <th class="table-panel-th status">STATUS</th>
+                            <th class="table-panel-th date">DATE</th>
+                            <th class="table-panel-th cost">TOTAL</th>
+                            <th class="table-panel-th btn">ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row in-progress-row">
+                            <td class="row-item id-item id">#96459761</td>
+                            <td class="row-item status-item status in-progress">ВЫПОЛНЯЕТСЯ</td>
+                            <td class="row-item date-item date">Mar 30, 2025 07:52</td>
+                            <td class="row-item cost-item cost">1500 руб (4 продукта)</td>
+                            <td class="row-item btn-item btn"><button>Посмотреть<img src="../public\assets\ArrowRight.svg" alt=""></button></td>
+                        </tr>
+                        <tr class="row ready-row">
+                            <td class="row-item id-item id">#71667167</td>
+                            <td class="row-item status-item status ready">ГОТОВО</td>
+                            <td class="row-item date-item date">Mar 7, 2025 23:26</td>
+                            <td class="row-item cost-item cost">1500 руб (4 продукта)</td>
+                            <td class="row-item btn-item btn"><button>Посмотреть<img src="../public\assets\ArrowRight.svg" alt=""></button></td>
+                        </tr>
+                        <tr class="row cancel-row">
+                            <td class="row-item id-item id">#95214362</td>
+                            <td class="row-item status-item status cancel">ОТМЕНА</td>
+                            <td class="row-item date-item date">Mar 7, 2025 23:26</td>
+                            <td class="row-item cost-item cost">1500 руб (4 продукта)</td>
+                            <td class="row-item btn-item btn"><button>Посмотреть<img src="../public\assets\ArrowRight.svg" alt=""></button></td>
+                        </tr>
+                        <tr class="row ready-row">
+                            <td class="row-item id-item id">#51746385</td>
+                            <td class="row-item status-item status ready">ГОТОВО</td>
+                            <td class="row-item date-item date">Feb 28, 2025 19:28</td>
+                            <td class="row-item cost-item cost">1500 руб (4 продукта)</td>
+                            <td class="row-item btn-item btn"><button>Посмотреть<img src="../public\assets\ArrowRight.svg" alt=""></button></td>
+                        </tr>
+                        <tr class="row ready-row">
+                            <td class="row-item id-item id">#71667167</td>
+                            <td class="row-item status-item status ready">ГОТОВО</td>
+                            <td class="row-item date-item date">Feb 27, 2025 07:52</td>
+                            <td class="row-item cost-item cost">1500 руб (4 продукта)</td>
+                            <td class="row-item btn-item btn"><button>Посмотреть<img src="../public\assets\ArrowRight.svg" alt=""></button></td>
+                        </tr>
+                        <tr class="row ready-row">
+                            <td class="row-item id-item id">#51746385</td>
+                            <td class="row-item status-item status ready">ГОТОВО</td>
+                            <td class="row-item date-item date">Feb 4, 2025 21:42</td>
+                            <td class="row-item cost-item cost">1500 руб (4 продукта)</td>
+                            <td class="row-item btn-item btn"><button>Посмотреть<img src="../public\assets\ArrowRight.svg" alt=""></button></td>
+                        </tr>
+                        <tr class="row ready-row">
+                            <td class="row-item id-item id">#51746385</td>
+                            <td class="row-item status-item status ready">ГОТОВО</td>
+                            <td class="row-item date-item date">Feb 2, 2025 19:28</td>
+                            <td class="row-item cost-item cost">1500 руб (4 продукта)</td>
+                            <td class="row-item btn-item btn"><button>Посмотреть<img src="../public\assets\ArrowRight.svg" alt=""></button></td>
+                        </tr>
+                        <tr class="row cancel-row">
+                            <td class="row-item id-item id">#673971743</td>
+                            <td class="row-item status-item status cancel">ОТМЕНА</td>
+                            <td class="row-item date-item date">Jun 20, 2025 23:14</td>
+                            <td class="row-item cost-item cost">1500 руб (4 продукта)</td>
+                            <td class="row-item btn-item btn"><button>Посмотреть<img src="../public\assets\ArrowRight.svg" alt=""></button></td>
+                        </tr>
+                        <tr class="row ready-row">
+                            <td class="row-item id-item id">#673971743</td>
+                            <td class="row-item status-item status ready">ГОТОВО</td>
+                            <td class="row-item date-item date">Dec 4, 2024 21:42</td>
+                            <td class="row-item cost-item cost">1500 руб (4 продукта)</td>
+                            <td class="row-item btn-item btn"><button>Посмотреть<img src="../public\assets\ArrowRight.svg" alt=""></button></td>
+                        </tr>
+                        <tr class="row ready-row">
+                            <td class="row-item id-item id">#673971743</td>
+                            <td class="row-item status-item status ready">ГОТОВО</td>
+                            <td class="row-item date-item date">Dec 30, 2024 07:52</td>
+                            <td class="row-item cost-item cost">1500 руб (4 продукта)</td>
+                            <td class="row-item btn-item btn"><button>Посмотреть<img src="../public\assets\ArrowRight.svg" alt=""></button></td>
+                        </tr>
+                        <tr class="row cancel-row">
+                            <td class="row-item id-item id">#673971743</td>
+                            <td class="row-item status-item status cancel">ОТМЕНА</td>
+                            <td class="row-item date-item date">Dec 30, 2024 05:18</td>
+                            <td class="row-item cost-item cost">1500 руб (4 продукта)</td>
+                            <td class="row-item btn-item btn"><button>Посмотреть<img src="../public\assets\ArrowRight.svg" alt=""></button></td>
+                        </tr>
+                        <tr class="row cancel-row">
+                            <td class="row-item id-item id">#673971743</td>
+                            <td class="row-item status-item status cancel">ОТМЕНА</td>
+                            <td class="row-item date-item date">Dec 30, 2024 07:52</td>
+                            <td class="row-item cost-item cost">1500 руб (4 продукта)</td>
+                            <td class="row-item btn-item btn"><button>Посмотреть<img src="../public\assets\ArrowRight.svg" alt=""></button></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <div class="tfooter">
+                    <button class="arrow arrow-left"><img src="../public/assets/ArrowLeft.svg" alt=""></button>
+                        <div class="num-cont">
+                            <p class="num selected">01</p>
+                            <p class="num">02</p>
+                            <p class="num media-out-4">03</p>
+                            <p class="num media-out-3">04</p>
+                            <p class="num media-out-2">05</p>
+                            <p class="num media-out-1">06</p>
+                        </div>
+                    <button class="arrow arrow-right"><img src="../public/assets/ArrowRight2.svg" alt=""></button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

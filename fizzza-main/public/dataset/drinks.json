@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Облепиховый сок",
+        "price": "100 рублей",
+        "image": "dataset/drinks/1701262797984-800x577.png",
+        "rating": 3.5
+    },
+    {
+        "name": "Брусничный сок",
+        "price": "150 рублей",
+        "image": "dataset/drinks/1701262871898-800x577.png",
+        "rating": 4.6
+    },
+    {
+        "name": "Evervess без сахара",
+        "price": "80 рублей",
+        "image": "dataset/drinks/1738581076813-800x577.png",
+        "rating": 4.3
+    },
+    {
+        "name": "Evervess",
+        "price": "120 рублей",
+        "image": "dataset/drinks/1743509997814-800x577.png",
+        "rating": 4.5
+    },
+    {
+        "name": "Ананасовый сок",
+        "price": "80 рублей",
+        "image": "dataset/drinks/js.png",
+        "rating": 4.3
+    },
+    {
+        "name": "Яблочный сок",
+        "price": "120 рублей",
+        "image": "dataset/drinks/yaapple.png",
+        "rating": 4.5
+    },
+    {
+        "name": "Апельсиновый сок",
+        "price": "80 рублей",
+        "image": "dataset/drinks/yaorange.png",
+        "rating": 4.3
+    },
+    {
+        "name": "Морс с клюквой",
+        "price": "100 рублей",
+        "image": "dataset/drinks/1024x1024_JbI0gOA.png",
+        "rating": 4.5
+    }
+]

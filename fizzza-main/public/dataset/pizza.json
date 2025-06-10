@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Пицца 4 сыра",
+        "price": "450 рублей",
+        "image": "dataset/pizza/10241024pizza4sira20.png",
+        "rating": 3.5
+    },
+    {
+        "name": "Ди панна",
+        "price": "500 рублей",
+        "image": "dataset/pizza/10241024pizzadipanna_SyzR2MA.png",
+        "rating": 4.7
+    },
+    {
+        "name": "Кампаниола",
+        "price": "550 рублей",
+        "image": "dataset/pizza/10241024pizzakampaniola.png",
+        "rating": 4.2
+    },
+    {
+        "name": "Карбонара",
+        "price": "450 рублей",
+        "image": "dataset/pizza/10241024pizzakarbonarabez_2hqQEFt.png",
+        "rating": 3.5
+    },
+    {
+        "name": "Маргарита",
+        "price": "500 рублей",
+        "image": "dataset/pizza/10241024pizzamargarita_zt0EWpA.png",
+        "rating": 4.7
+    },
+    {
+        "name": "Пепперони",
+        "price": "550 рублей",
+        "image": "dataset/pizza/10241024pizzapepperoni30_POzLGaD.png",
+        "rating": 4.2
+    },
+    {
+        "name": "Питер",
+        "price": "450 рублей",
+        "image": "dataset/pizza/10241024pizzapiter_dYwD2co.png",
+        "rating": 3.5
+    },
+    {
+        "name": "Полло",
+        "price": "500 рублей",
+        "image": "dataset/pizza/10241024pizzapollo_Ye7hgNT.png",
+        "rating": 4.7
+    },
+    {
+        "name": "Грибная",
+        "price": "550 рублей",
+        "image": "dataset/pizza/10241024pizzaproshuttofungi_2bsndxj.png",
+        "rating": 4.2
+    },
+    {
+        "name": "Шанхай",
+        "price": "450 рублей",
+        "image": "dataset/pizza/10241024pizzashanhai.png",
+        "rating": 3.5
+    },
+    {
+        "name": "Острый джо",
+        "price": "500 рублей",
+        "image": "dataset/pizza/10241024pizzaspicyjoe_TgXxXTf.png",
+        "rating": 4.7
+    },
+    {
+        "name": "Прованс",
+        "price": "550 рублей",
+        "image": "dataset/pizza/10241024provans_OFHrVem.png",
+        "rating": 4.2
+    }
+]

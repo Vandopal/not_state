@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/menupol.css">
+    <script src="./scripts/menupol.js"></script>
+    <title>FizzaPizza/menupol</title>
+</head>
+<body>
+    <header>
+        <div class="schedule">Мы работаем 24 на 7</div>
+        <nav class="navigator">
+            <img class="logo" src="assets/Group 50.png" alt="">
+            <div class="btns-cont-1">
+                <button class="main-btn" onclick="window.location.href='/main.html'">Главная</button>
+                <button class="menu-btn" onclick="window.location.href='/menupol.html'">Меню</button> 
+                <button class="contact-btn" onclick="window.location.href='/menu.html'">Контакт</button>
+            </div>
+            <div class="btns-cont-2">
+                <button class="search-btn"><img src="assets/akar-icons_search.png" alt=""></button>
+                <button class="wishlist-btn" onclick="window.location.href='/basket.html'"><img src="assets/Group 2.png" alt=""></button>
+                <button class="sign-in-btn" onclick="window.location.href='/settings.html'"><img src="assets/carbon_login.png" alt="">Войти</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="cont-img-1">
+            <img class="back-img" src="assets/Group 25.png" alt="">
+        </div>
+            <div class="cont-el-1">
+             <h1>Наборы</h1>
+             <p>
+                Традиционное итальянское блюдо, изначально в виде круглой<br>
+                дрожжевой лепёшки, выпекаемой с уложенной сверху начинкой<br>
+                из томатного соуса, сыра и зачастую других ингредиентов, таких как мясо,<br>
+                овощи, грибы и прочие продукты.
+             </p>
+             <div cont-btns>
+             <button class="btn" onclick="window.location.href='/menu.html'">Готовые наборы</button>
+             <button class="btn" onclick="window.location.href='/menu.html'">Собрать свой набор</button>
+             </div>
+          </div>
+          <section class="food-class-blocks"> 
+            <button class="food-class-block food-class-button active" onclick="showSection('pizza-container')">
+                <img class="pizza-img" src="assets/Pizza icon.png" alt="">
+                <p>Пицца</p>
+                <div class="line-w"> </div>
+                <img class="arrow-img" src="assets/Arrow - Right 3.png" alt="">
+            </button>
+            <button class="food-class-block food-class-button" onclick="showSection('salad-container')">
+                <img class="salad-img" src="assets/Fruits icon.png" alt="">
+                <p>Салаты</p>
+                <div class="line"> </div>
+                <img class="arrow-img" src="assets/Arrow - Right 2.png" alt="">
+            </button>
+            <button class="food-class-block food-class-button" onclick="showSection('snack-container')">
+                <img class="snacks-img" src="assets/Snacks icon.png" alt="">
+                <p>Снэки</p>
+                <div class="line"> </div>
+                <img class="arrow-img" src="assets/Arrow - Right 2.png" alt="">
+            </button>
+            <button class="food-class-block food-class-button" onclick="showSection('burger-container')">
+                <img class="Burger-img" src="assets/Burger icon.png" alt="">
+                <p>Бургеры</p>
+                <div class="line"> </div>
+                <img class="arrow-img" src="assets/Arrow - Right 2.png" alt="">
+            </button>
+            <button class="food-class-block food-class-button" onclick="showSection('drink-container')">
+                <img class="coke-img" src="assets/Coke icon.png" alt="">
+                <p>Напитки</p>
+                <div class="line"> </div>
+                <img class="arrow-img" src="assets/Arrow - Right 2.png" alt="">
+            </button>
+        </section>
+
+        <section id="content-container">
+        </section>
+    </main>
+</body>
+</html>

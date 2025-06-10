@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/auth.css">
+        <script src="./scripts/auth.js"></script>
+        <title>FizzaPizza</title>
+    </head>
+    <body>
+       <div class="main-auth-block">
+          <div class="main-auth-block-2">
+            <h1 class="auth">Авторизация</h1>
+            <p class="auth-txt">Введите почту и пароль для входа</p>
+            <div class="auth-textarea-1">
+                <h4 class="auth-mail">Почта</h4>
+                <textarea class="auth-mail-textarea" placeholder="Ваш email" required></textarea>
+             </div>
+           
+            <div class="auth-textarea-2">
+              <div class="auth-password">
+                <h4 class="auth-password-2">Пароль</h4>
+                <button class="auth-forget-password">Забыли пароль?</button>
+              </div>
+              <textarea class="auth-password-textarea" placeholder="Ваш пароль" required></textarea>
+            </div>
+         </div>
+            <button class="auth-signin-btn">Войти</button>
+            <p class="auth-noacc">Нету аккаунта? <span><button class="auth-reg-btn" onclick="window.location.href='/reg.html'">Зарегистрироваться</button></span></p>
+       </div> 
+       <div class="picture-auth-block">
+            <img class='picture-auth-1' src="assets/Ellipse 3.png" alt="">
+           <div class="picture-auth-block-2">
+            <div class="picture-auth-txt-1">FIZZA - вкуснее нету!</div>
+            <div class="picture-auth-txt-2">Пицца, которая взрывает вкусовые рецепторы</div>
+           </div> 
+          <img class='picture-auth-2' src="assets\Ellipse 3.png" alt="">
+       </div>
+    </body>
+</html>
