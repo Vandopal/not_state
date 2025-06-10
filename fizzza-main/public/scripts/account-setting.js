@@ -84,7 +84,7 @@ if (saveBtn) {
         const authToken = localStorage.getItem('authToken');
         if (!authToken) {
             alert('Пожалуйста, войдите в систему');
-            window.location.href= '/auth.html';
+            window.location.href = '/auth.html';
             return;
         }
 
@@ -95,43 +95,42 @@ if (saveBtn) {
         const address = document.querySelector('.address')?.value.trim() || '';
 
         try {
-          saveBtn.disabled= true;
-          saveBtn.textContent= 'Сохранение...';
+            saveBtn.disabled = true;
+            saveBtn.textContent = 'Сохранение...';
 
-          const response= await fetch('http://185.251.91.155:5000/user/update', {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json',
-                  'Authorization': `Bearer ${authToken}`
-              },
-              credentials: 'include',
-              body: JSON.stringify({
-                name: firstName,
-                surname: lastName,
-                email: email,
-                phone: phone,
-                address: address
-            })
-          });
+            const response = await fetch('/user/update', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${authToken}`
+                },
+                body: JSON.stringify({
+                    name: firstName,
+                    surname: lastName,
+                    email: email,
+                    phone: phone,
+                    address: address
+                })
+            });
 
-          const result= await response.json();
+            const result = await response.json();
 
-          if (!response.ok) throw new Error(result.message || 'Ошибка при сохранении данных');
+            if (!response.ok) throw new Error(result.message || 'Ошибка при сохранении данных');
 
-          alert('Данные успешно сохранены!');
+            alert('Данные успешно сохранены!');
 
-          if (result.token) {
-              localStorage.setItem('authToken', result.token);
-          }
+            if (result.token) {
+                localStorage.setItem('authToken', result.token);
+            }
 
-      } catch (error) {
-          console.error('Ошибка:', error);
-          alert(error.message || 'Произошла ошибка при сохранении данных');
-      } finally {
-          saveBtn.disabled= false;
-          saveBtn.textContent= 'Сохранить';
-      }
-  });
+        } catch (error) {
+            console.error('Ошибка:', error);
+            alert(error.message || 'Произошла ошибка при сохранении данных');
+        } finally {
+            saveBtn.disabled = false;
+            saveBtn.textContent = 'Сохранить';
+        }
+    });
 }
 
 const logoutBtn= document.querySelector('.logout');
